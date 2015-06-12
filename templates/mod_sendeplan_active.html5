@@ -1,0 +1,5 @@
+<?php if($this->activeDJ):?>
+<div class="ce_sendeplan">
+	<?php echo $this->activeDJ;?>
+</div>
+<?php endif;?>

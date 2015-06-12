@@ -1,0 +1,38 @@
+<?php 
+	if(!function_exists('getLanguageData')){
+		function getLanguageData($lang,$index){
+			return $lang['de'][$index];
+		}
+	}
+?>
+
+<table class="opacity sendeplan">
+	<thead>
+		<tr>
+			<td>Tag</td>
+			<?php foreach($this->sendeplan['montag'] as $hKey => $hour){?>
+			<th><div class="minWidth"></div><?php echo getLanguageData($this->lang,$hour['day'])?></th>
+			<?php }?>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<?php foreach($this->sendeplan as $dKey => $day){?>
+		<tr>
+			<?php foreach($day as $hKey => $hour){?>
+			
+			<?php if($hKey==0){?>
+			<td class="first"><?php echo getLanguageData($this->lang,$dKey);?></td>
+			<?php }?>
+			
+			<td <?php echo ($hour['active']==true?'class="active"':'')?>>
+				<a href="{{link_url::16}}#<?php echo standardize($hour['dj_nick']);?>" title="<?php echo $hour['dj_nick'];?>"><?php echo $hour['dj_nick'];?></a><br/>
+				<?php if(!empty($hour['music'])){?>
+		    		<div class="music"><?php echo implode(', ',deserialize($hour['music']));?></div>
+		    		<?php }?>
+			</td>
+			<?php }?>
+		</tr>
+		<?php }?>
+	</tbody>
+</table>

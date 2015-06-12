@@ -1,0 +1,49 @@
+<?php $this->extend('block_unsearchable'); ?>
+<?php $this->block('content'); ?>
+
+
+<?php foreach($this->sendeplan as $day => $hours): ?>
+  <h2><?php echo $GLOBALS['TL_LANG']['tl_sendeplan'][$day.'_'.array_shift((array_keys($hours)))][0];?><span><?php echo $this->dates[$day]['date'];?></span></h2>
+  <?php foreach($hours as $key => $hour): ?>
+  <?php if($key != 'data'):?>
+  <div class="<?php echo $day;?><?php echo ($day === $this->today?' today':'');?> opacity sendeplan<?php echo $hour['active']?' active':''?>">
+    <div>
+      <h3><?php echo $GLOBALS['TL_LANG']['tl_sendeplan'][$day.'_'.$key][1];?></h3>
+      <a href="{{link_url::16}}#<?php echo standardize($hour['dj_nick']);?>" title="<?php echo $hour['dj_nick'];?>"><?php echo $hour['dj_nick'];?></a>
+      <?php if(!empty($hour['music'])): ?>
+      <div class="music"><?php echo implode(', ',deserialize($hour['music']));?></div>
+      <?php endif;?>
+      <?php /*if ($hour['addImage']): ?>
+      <div class="image_container<?php echo $hour['floatClass']; ?>"<?php if ($hour['margin'] || $hour['float']): ?> style="<?php echo trim($hour['margin'] . $hour['float']); ?>"<?php endif; ?>>
+      <?php if ($hour['href']): ?>
+      <a href="<?php echo $hour['href']; ?>"<?php echo $hour['attributes']; ?> title="<?php echo $hour['alt']; ?>">
+      <?php endif; ?>
+      <img src="<?php echo $hour['src']; ?>"<?php echo $hour['imgSize']; ?> alt="<?php echo $hour['alt']; ?>" />
+      <?php if ($hour['href']): ?>
+      </a>
+      <?php endif; ?>
+      <?php if ($hour['caption']): ?>
+      <div class="caption"><?php echo $hour['caption']; ?></div>
+      <?php endif; ?>
+      </div>
+      <?php endif; /**/?>
+      <?php if($hour['special']): ?>
+        <div class="sondersendung">
+        <div class="lightbox">
+          <h4>Sondersendung</h4>
+          <div class="lightbox-wrapper">
+            <div class="lightbox-distancer"></div>
+            <div class="lightbox-content">
+              <div class="lightbox-close">X Schließen</div>
+              <?php echo $hour['special']['text'];?>
+            </div>
+          </div>
+        </div>
+        </div>
+      <?php endif;?>
+    </div>
+  </div>
+  <?php endif;?>
+  <?php endforeach;?>
+<?php endforeach;?>
+<?php $this->endblock(); ?>
