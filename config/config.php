@@ -12,16 +12,16 @@
 
 
 if(TL_MODE == 'FE')
-	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/SWSendeplan/assets/sondersendung.js';
+	$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/Sendeplan/assets/sondersendung.js';
 
 array_insert($GLOBALS['BE_MOD']['sioweb'], 4, array(
 	'sendeplan' => array(
 		'tables' => array('tl_sendeplan'),
-		'icon' => 'system/modules/SWSendeplan/assets/sioweb16x16.png'
+		'icon' => 'system/modules/Sendeplan/assets/sioweb16x16.png'
 	),
 	'sondersendung' => array(
 		'tables' => array('tl_sondersendung'),
-		'icon' => 'system/modules/SWSendeplan/assets/sioweb16x16.png'
+		'icon' => 'system/modules/Sendeplan/assets/sioweb16x16.png'
 	)
 ));
 
