@@ -51,10 +51,10 @@ class SendeplanWeek extends \Module {
 	/**
 	 * Generate module
 	 */
-	protected function compile() { 
+	protected function compile() {
 		$this->loadLanguageFile('tl_sendeplan');
 		$this->sendeplan_id = 1;
-		$Sendeplan = SendeplanModel::findByPk(1);
+		$Sendeplan = SendeplanModel::findByPk($this->sendeplan);
 		if(!$Sendeplan)
 			return;
 
@@ -82,6 +82,9 @@ class SendeplanWeek extends \Module {
 			}
 		}
 		$this->Template->dates = $arrDates;
+		$this->Template->url = false;
+		if($this->sendeplan_jt)
+			$this->Template->url = ampersand($this->generateFrontendUrl(\PageModel::findByPk($this->sendeplan_jt)->row()));
 		$this->Template->sendeplan = $sendeplan;
 	}
 

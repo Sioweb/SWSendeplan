@@ -28,7 +28,7 @@ array_insert($GLOBALS['BE_MOD']['sioweb'], 4, array(
 array_insert($GLOBALS['FE_MOD'], 2, array (
 	'sendeplan' => array (
 		'sendeplan'   		=> 'SendeplanWeek',
-		'sondersendungen' 	=> 'SondersendungWeek',
+		//'sondersendungen' 	=> 'SondersendungWeek',
 		'activeDJ'     		=> 'SendeplanActive'
 	)
 ));

@@ -9,7 +9,7 @@
   <div class="<?php echo $day;?><?php echo ($day === $this->today?' today':'');?> opacity sendeplan<?php echo $hour['active']?' active':''?>">
     <div>
       <h3><?php echo $GLOBALS['TL_LANG']['tl_sendeplan'][$day.'_'.$key][1];?></h3>
-      <a href="{{link_url::16}}#<?php echo standardize($hour['dj_nick']);?>" title="<?php echo $hour['dj_nick'];?>"><?php echo $hour['dj_nick'];?></a>
+      <?php if($this->url) {?><a href="<?php echo $this->url;?>#<?php echo standardize($hour['dj_nick']);?>" title="<?php echo $hour['dj_nick'];?>"><?php }?><?php echo $hour['dj_nick'];?><?php if($this->url) {?></a><?php }?>
       <?php if(!empty($hour['music'])): ?>
       <div class="music"><?php echo implode(', ',deserialize($hour['music']));?></div>
       <?php endif;?>

@@ -22,12 +22,12 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
     // models
-    'sioweb\contao\extensions\sendeplan\SendeplanModel'     => 'system/modules/SWSendeplan/models/SendeplanModel.php',
-    'sioweb\contao\extensions\sendeplan\SondersendungModel' => 'system/modules/SWSendeplan/models/SondersendungModel.php',
+    'sioweb\contao\extensions\sendeplan\SendeplanModel'     => 'system/modules/Sendeplan/models/SendeplanModel.php',
+    'sioweb\contao\extensions\sendeplan\SondersendungModel' => 'system/modules/Sendeplan/models/SondersendungModel.php',
     // modules
-    'sioweb\contao\extensions\sendeplan\SendeplanActive'    => 'system/modules/SWSendeplan/modules/SendeplanActive.php',
-    'sioweb\contao\extensions\sendeplan\SendeplanWeek'      => 'system/modules/SWSendeplan/modules/SendeplanWeek.php',
-    'sioweb\contao\extensions\sendeplan\SondersendungWeek'  => 'system/modules/SWSendeplan/modules/SondersendungWeek.php',
+    'sioweb\contao\extensions\sendeplan\SendeplanActive'    => 'system/modules/Sendeplan/modules/SendeplanActive.php',
+    'sioweb\contao\extensions\sendeplan\SendeplanWeek'      => 'system/modules/Sendeplan/modules/SendeplanWeek.php',
+    'sioweb\contao\extensions\sendeplan\SondersendungWeek'  => 'system/modules/Sendeplan/modules/SondersendungWeek.php',
 ));
 
 
@@ -36,9 +36,9 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-    'mod_sendeplan'         => 'system/modules/SWSendeplan/templates',
-    'mod_sendeplan_active'  => 'system/modules/SWSendeplan/templates',
-    'sendeplan_week'        => 'system/modules/SWSendeplan/templates',
-    'sendeplan_active'		=> 'system/modules/SWSendeplan/templates',
-    'tl_sondersendung_week' => 'system/modules/SWSendeplan/templates',
+    'mod_sendeplan'         => 'system/modules/Sendeplan/templates',
+    'mod_sendeplan_active'  => 'system/modules/Sendeplan/templates',
+    'sendeplan_week'        => 'system/modules/Sendeplan/templates',
+    'sendeplan_active'		=> 'system/modules/Sendeplan/templates',
+    'tl_sondersendung_week' => 'system/modules/Sendeplan/templates',
 ));
